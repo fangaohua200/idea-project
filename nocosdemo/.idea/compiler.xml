@@ -19,10 +19,5 @@
         <module name="service2server" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="nocosdemo" target="8" />
-      <module name="service1_config" target="8" />
-      <module name="service2_config" target="8" />
-    </bytecodeTargetLevel>
   </component>
 </project>
