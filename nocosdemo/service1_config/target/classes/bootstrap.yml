@@ -1,0 +1,15 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: service1
+  cloud:
+    nacos:
+      config:
+        server-addr: 192.168.190.130:8848
+        file-extension: yaml
+        namespace: 306dc2d0-9a77-44d3-8ff6-8653450d4d14
+        group: test_GROUP
+
+        #dataid 自动拼装

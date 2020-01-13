@@ -1,0 +1,20 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: provider
+  cloud:
+    nacos:
+      config:
+        enabled: false
+        server-addr: 192.168.190.130:8848
+        file-extension: yaml
+        namespace: 306dc2d0-9a77-44d3-8ff6-8653450d4d14
+        group: test_GROUP
+      discovery:
+        server-addr: 192.168.190.130:8848
+        namespace: c18fa342-9845-4f4e-a2d7-9ab34fb66e4c
+        cluster-name: DevCluster
+
+      #dataid 自动拼装

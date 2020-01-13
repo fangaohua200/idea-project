@@ -1,0 +1,40 @@
+server:
+  port: 56030
+
+
+spring:
+  application:
+    name: service1
+  cloud:
+    nacos:
+      config:
+        server-addr: 192.168.190.130:8848
+        file-extension: yaml
+        #tst namespace
+        namespace: 306dc2d0-9a77-44d3-8ff6-8653450d4d14
+        group: test_GROUP
+      discovery:
+        server-addr: 192.168.190.130:8848
+        namespace: 306dc2d0-9a77-44d3-8ff6-8653450d4d14
+        cluster-name: DevCluster
+
+
+      #dataid 自动拼装
+  main:
+    allow-bean-definition-overriding: true #防止bean 重复 springboot 2.1
+
+dubbo:
+  scan:
+    #dubbo 扫描基本路径
+    base-packages: service
+  protocol:
+    #协议 rmi hession dubbo
+    name: dubbo
+    port: 20881
+  registry:
+    #注册到nacos中心
+    address: nacos://192.168.190.130:8848
+  application:
+    qos-enable: false #是否开启运维服务
+  consumer:
+    check: false #启动时是否检查依赖的服务

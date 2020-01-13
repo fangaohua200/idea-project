@@ -1,0 +1,24 @@
+server:
+  port: 56020
+  servlet:
+    context-path: /application1
+
+spring:
+  application:
+    name: application1
+  cloud:
+    nacos:
+      config:
+        server-addr: 192.168.190.130:8848
+        file-extension: yaml
+        #tst namespace
+        namespace: 306dc2d0-9a77-44d3-8ff6-8653450d4d14
+        group: test_GROUP
+      discovery:
+        server-addr: 192.168.190.130:8848
+        namespace: 306dc2d0-9a77-44d3-8ff6-8653450d4d14
+        cluster-name: DevCluster
+
+      #dataid 自动拼装
+  main:
+    allow-bean-definition-overriding: true #防止bean 重复 springboot 2.1
